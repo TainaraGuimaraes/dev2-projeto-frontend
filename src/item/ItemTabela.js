@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from '@material-ui/core/Icon';
 import IconButton from '@material-ui/core/IconButton';
-import { withStyles, makeStyles } from '@material-ui/core/styles';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
@@ -9,8 +8,6 @@ import TableRow from '@material-ui/core/TableRow';
 
 export default class ItemTabela extends React.Component {
         
-
-
         
     render() {
 

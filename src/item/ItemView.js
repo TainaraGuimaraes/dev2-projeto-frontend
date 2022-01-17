@@ -2,11 +2,7 @@ import React, {Component} from 'react';
 import axios from 'axios';
 import ItemTabela from './ItemTabela';
 import ItemForm from './ItemForm';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-
-
 
 export default class ItemView extends Component {
 
@@ -14,6 +10,8 @@ export default class ItemView extends Component {
       super();
       this.state={carregar:true, itemParaEditar:null};
     }
+
+    
 
     listarUsuarios() {
       axios.get("/usuarios/").then(
@@ -28,9 +26,6 @@ export default class ItemView extends Component {
           categorias:retorno.data})  
       );
     }
-
-   
-
 
     listar() {
       axios.get("/itens/").then(
@@ -82,7 +77,7 @@ export default class ItemView extends Component {
           categorias={this.state.categorias}
           onCadastrar={(item)=>this.cadastrar(item)}
           onAtualizar={(item)=>this.atualizar(item)}
-          onCancelar={()=>this.setState({itemoParaEditar:null})}
+          onCancelar={()=>this.setState({itemParaEditar:null})}
           />
           
           <br/>

@@ -11,16 +11,13 @@ import Icon from '@material-ui/core/Icon';
 import ItemView from '../item/ItemView';
 import Typography from '@material-ui/core/Typography';
 import logoifrs from '../logoifrs.png';
+import UsuarioView from '../usuario/UsuarioView';
 
 export default class MenuPagina extends React.Component {
         constructor(){
         super();
-        this.state={itemMenu:""};
+        this.state={itemMenu:"", usuarioMenu: ""};
     }
-
-       
-
-
 
     render() {
         return <Grid container justify="center" alignItems="stretch" style={
@@ -29,40 +26,103 @@ export default class MenuPagina extends React.Component {
                 backgroundColor: "#DCDCDC"
                 
             }}>
-            <Grid item xs="3" md="2" lg="2" style={{ backgroundColor: "#fff" }}  >
+            <Grid item xs="3" md="2" lg="2" style={{ backgroundColor: "#D3D3D3" }}  >
 
-            <Toolbar><img src={logoifrs} style={{ height: "60px", marginRight: "0px" }} />
+            <Toolbar><img src={logoifrs} style={{ height: "60px", marginRight: "5px" }} />
                     <Typography variant="title" gutterBottom>
-                        
+                       
               </Typography>
                 </Toolbar>
                 <List component="nav">
                 <ListItem button onClick={()=>this.setState({itemMenu:"item"})}>
                         
-                        <ListItemIcon>
-                            <Icon>business_center</Icon>
+                    <ListItemIcon>
+                        <Icon></Icon>
                         </ListItemIcon>
                         <ListItemText inset primary={
                             <Typography variant="button">
-                                Item             
+                                Cadastrar Item             
                             </Typography>
                            
                         } />
                     </ListItem>
 
-                   
-                    
-                    
+                <ListItem button onClick={()=>this.setState({itemMenu:"item"})}>
+                        
+                    <ListItemIcon>
+                        <Icon></Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Consultar Item            
+                            </Typography>
+                               
+                        } />
+                    </ListItem>   
+
+                <ListItem button onClick={()=>this.setState({itemMenu:"item"})}>
+                        
+                    <ListItemIcon>
+                        <Icon></Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Editar Item            
+                            </Typography>
+                               
+                        } />
+                    </ListItem> 
+
+                <ListItem button onClick={()=>this.setState({usuarioMenu:"usuario"})}>
+                        
+                    <ListItemIcon>
+                        <Icon></Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Cadastrar usuario           
+                            </Typography>
+                               
+                        } />
+                    </ListItem>    
+
+                <ListItem button onClick={()=>this.setState({usuarioMenu:"usuario"})}>
+                        
+                    <ListItemIcon>
+                        <Icon></Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Consultar usuario           
+                            </Typography>
+                                   
+                         } />
+                    </ListItem> 
+
+                <ListItem button onClick={()=>this.setState({usuarioMenu:"usuario"})}>
+                        
+                    <ListItemIcon>
+                        <Icon></Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Editar Usuario           
+                            </Typography>
+                                   
+                        } />
+                    </ListItem>     
+
                 </List> </Grid>
-            <Grid item xs="9" md="100" lg="10"    >
+            <Grid item xs="9" md="100" lg="20"    >
                 <Paper style={{ height: "100%"}} >
                     <AppBar position="static" style={{ height: "60px", backgroundColor: "#32CD32" }} >
-                        <Toolbar style={{ color: "black" }}>Achados e Perdidos IFRS</Toolbar>
+                        <Toolbar style={{ color: "black"}}>Achados e Perdidos IFRS</Toolbar>
                     </AppBar>
 
 
                     <div style={{ marginLeft: "-300px", height: "calc(100% - 90px)"}}>
-                        {this.state.itemMenu=="item"?<ItemView />:""} 
+                        {this.state.itemMenu==="item"?<ItemView />:""} ,
+                        {this.state.usuarioMenu ==="usuario"?<UsuarioView/>:""}
 
                     </div>
                     

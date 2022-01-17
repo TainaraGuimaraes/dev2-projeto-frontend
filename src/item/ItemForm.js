@@ -1,24 +1,14 @@
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import { makeStyles } from '@material-ui/core/styles';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import MenuItem  from '@material-ui/core/MenuItem';
-import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 
 
-
-
-
-
-
-
-
 export default class ItemForm extends React.Component {
-
-
 
     constructor(props) {
         super(props);
@@ -58,8 +48,6 @@ export default class ItemForm extends React.Component {
         }
     }
 
-    
-
     limpar() {
         if (this.props.editar) {
             this.props.onCancelar();
@@ -83,17 +71,15 @@ export default class ItemForm extends React.Component {
     confirmar() {
 
         let usuario = this.props.usuarios.find(
-            (usuario) => usuario.id == this.state.usuarioId
+            (usuario) => usuario.id === this.state.usuarioId
 
         );
         
         let categoria = this.props.categorias.find(
-            (categoria) => categoria.id == this.state.categoriaId
+            (categoria) => categoria.id === this.state.categoriaId
 
         );
-
        
-
         if (this.props.editar) {
             this.props.onAtualizar({
                 id: this.props.editar.id,
@@ -143,8 +129,6 @@ export default class ItemForm extends React.Component {
                
             <br />
 
-            
-
                 <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label" >Descricao</label>
                 <textarea class="form-control" value={this.state.descricao} 
@@ -164,9 +148,7 @@ export default class ItemForm extends React.Component {
                 })}
             />
             <br />
-            
-      
-           
+        
             <TextField 
             label="Local"
             component= "form"
@@ -190,11 +172,7 @@ export default class ItemForm extends React.Component {
                 })}
             /> 
            
-          
-            
-
-
-
+    
                <br />
 
                <TextField 
@@ -204,11 +182,7 @@ export default class ItemForm extends React.Component {
                 onChange={(event) => this.setState({
                     modelo: event.target.value
                 })}
-            /> 
-           
-
-
-    
+            />
 
            <br />
                     <br />
@@ -244,13 +218,6 @@ export default class ItemForm extends React.Component {
 
                     <br />
 
-
-
-              
-
-
-
-
             <TextField 
                 select 
                 label="Usuario"
@@ -271,11 +238,6 @@ export default class ItemForm extends React.Component {
             <br />
 
             
-            
-            
-
-           
-
             <TextField 
                 select 
                 label="Categoria"
@@ -291,15 +253,8 @@ export default class ItemForm extends React.Component {
             
             </TextField> 
 
-           
-
-
 
             <br /><br />
-
-            
-
-
 
 
             <Button
@@ -307,7 +262,7 @@ export default class ItemForm extends React.Component {
                 variant="outlined" color="primary"
                 disabled={this.state.valor < 0}
                 onClick={() => this.confirmar()}
-            >{this.props.editar ? "Confirmar" : "Cadastrar"}</Button>
+            >{this.props.editar ? "Confirmar" : "OK"}</Button>
             
             <Button
                variant="outlined" color="secondary"
