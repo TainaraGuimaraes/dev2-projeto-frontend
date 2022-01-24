@@ -16,6 +16,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 
 
 
+
+
 export default class ItemForm extends React.Component {
 
 
@@ -105,9 +107,8 @@ export default class ItemForm extends React.Component {
                 modelo: this.state.modelo,
                 perdido: this.state.perdido,
                 devolvido: this.state.devolvido,
-                data: this.state.data,
-                usuario: usuario,
-                categoria: categoria
+                data: this.state.data
+                
             });
         } else {
             this.props.onCadastrar({
@@ -178,6 +179,18 @@ export default class ItemForm extends React.Component {
 
             
             <br /> 
+            <br /> 
+
+            <div class="col-sm-10">
+                 <input type="date" class="form-control form-control-sm" value={this.state.data}
+                onChange={(evento)=>this.setValor('data',evento.target.value)} placeholder="Data"/>
+             </div>
+
+             <br /> 
+
+             
+
+                
               
 
            
@@ -189,7 +202,10 @@ export default class ItemForm extends React.Component {
                     marca: event.target.value
                 })}
             /> 
-           
+
+               
+                   
+                        
           
             
 
@@ -227,6 +243,10 @@ export default class ItemForm extends React.Component {
 
                     <br />
 
+                  
+
+                    
+
                     <br />
 
                    
@@ -245,11 +265,14 @@ export default class ItemForm extends React.Component {
                     <br />
 
 
+                    
+
+
 
               
 
 
-
+        
 
             <TextField 
                 select 
@@ -269,6 +292,10 @@ export default class ItemForm extends React.Component {
             
             </TextField> 
             <br />
+
+            
+
+         
 
             
             
@@ -291,12 +318,14 @@ export default class ItemForm extends React.Component {
             
             </TextField> 
 
-           
-
-
-
             <br /><br />
 
+            <div>
+                <label for="exampleFormControlFile1"></label>
+                <input type="file" class="form-control-file" id="exampleFormControlFile1"></input>
+                </div>
+
+                <br />
             
 
 
