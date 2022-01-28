@@ -7,6 +7,8 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
+import Form from 'react-bootstrap/Form'
+
 
 
 
@@ -181,14 +183,19 @@ export default class ItemForm extends React.Component {
             <br /> 
             <br /> 
 
-            <div class="col-sm-10">
-                 <input type="date" class="form-control form-control-sm" value={this.state.data}
-                onChange={(evento)=>this.setValor('data',evento.target.value)} placeholder="Data"/>
-             </div>
+           
 
-             <br /> 
+             <br /><br /> 
 
-             
+
+             <label>Data: </label>
+             <input value={this.state.data} type="date"
+                onchange={ (evento) => this.setState({
+                    data: evento.target.value
+                })}/>
+
+            <br /><br /> 
+
 
                 
               
@@ -229,68 +236,29 @@ export default class ItemForm extends React.Component {
            <br />
                     <br />
 
-                    <p>Perdido</p>
-                    <label onChange={(event) => this.setState({perdido: event.target.value})} value={this.state.perdido} checked={this.state.perdido}>
-                        <input value="true" 
-                         type="checkbox" />
-                            Sim
-                    </label>
-                    <label onChange={(event) => this.setState({perdido: event.target.value})} value={this.state.perdido} checked={this.state.perdido}>
-                        <input value="false"
-                         type="checkbox" />
-                            Não
-                    </label>
-
-                    <br />
-
                   
 
-                    
-
                     <br />
 
+                    <p>Perdido</p>
+                    <form onChange={(event) => this.setState({perdido: event.target.value})}>
+                        <input type="radio" name="opcao" value="true"/> Sim
+                        <input type="radio" name="opcao" value="false" /> Não
+                    </form>
+
+                  
                    
-                    <p>Devolvido</p>
-                    <label onChange={(event) => this.setState({devolvido: event.target.value})} value={this.state.devolvido} checked={this.state.devolvido}>
-                        <input value="true" 
-                         type="checkbox" />
-                            Sim
-                    </label>
-                    <label onChange={(event) => this.setState({devolvido: event.target.value})} value={this.state.devolvido} checked={this.state.perdido}>
-                        <input value="false"
-                         type="checkbox" />
-                            Não
-                    </label>
-
                     <br />
 
-
-                    
-
-
-
-              
-
+                    <p>Devolvido</p>
+                    <form onChange={(event) => this.setState({devolvido: event.target.value})}>
+                        <input type="radio" name="opcao" value="true"/> Sim
+                        <input type="radio" name="opcao" value="false" /> Não
+                    </form>
 
         
 
-            <TextField 
-                select 
-                label="Usuario"
-                value={this.state.usuarioId} 
-                style={{minWidth:"100px"}}
-                onChange={
-                    (evento) => this.setState({
-                        usuarioId: evento.target.value
-                    })
-                }>
-                <MenuItem key="" value=""></MenuItem>
-                {
-                    this.props.usuarios && this.props.usuarios.map(
-                        (usuario) => <MenuItem value={usuario.id}>{usuario.nome}</MenuItem>
-                    )}
-            
-            </TextField> 
+           
             <br />
 
             
@@ -326,9 +294,7 @@ export default class ItemForm extends React.Component {
                 </div>
 
                 <br />
-            
-
-
+           
 
 
             <Button
