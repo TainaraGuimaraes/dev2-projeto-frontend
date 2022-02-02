@@ -9,6 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
 import ItemView from '../item/ItemView';
+import ItemCadastroView from '../item/ItemCadastroView';
 import Typography from '@material-ui/core/Typography';
 import logoifrs from '../logoifrs.png';
 
@@ -36,15 +37,28 @@ export default class MenuPagina extends React.Component {
                         
               </Typography>
                 </Toolbar>
-                <List component="nav">
+                <List component="nav" >
                 <ListItem button onClick={()=>this.setState({itemMenu:"item"})}>
                         
                         <ListItemIcon>
-                            <Icon>business_center</Icon>
+                            <Icon>table_rows</Icon>
                         </ListItemIcon>
                         <ListItemText inset primary={
                             <Typography variant="button">
-                                Item             
+                                Perdidos             
+                            </Typography>
+                           
+                        } />
+                    </ListItem>
+
+                    <ListItem button onClick={()=>this.setState({itemMenu:"cadastro"})}>
+                        
+                        <ListItemIcon>
+                            <Icon>add_box</Icon>
+                        </ListItemIcon>
+                        <ListItemText inset primary={
+                            <Typography variant="button">
+                                Novo item             
                             </Typography>
                            
                         } />
@@ -62,7 +76,8 @@ export default class MenuPagina extends React.Component {
 
 
                     <div style={{ marginLeft: "-300px", height: "calc(100% - 90px)"}}>
-                        {this.state.itemMenu=="item"?<ItemView />:""} 
+                        {this.state.itemMenu=="item"?<ItemView />:""}
+                        {this.state.itemMenu=="cadastro"?<ItemCadastroView />:""} 
 
                     </div>
                     

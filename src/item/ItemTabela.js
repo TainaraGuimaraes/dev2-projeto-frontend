@@ -26,7 +26,6 @@ export default class ItemTabela extends React.Component {
                 <TableCell>Perdido</TableCell>
                 <TableCell>Devolvido</TableCell>
                 <TableCell>Data</TableCell>
-                <TableCell>Usuario</TableCell>
                 <TableCell>Categoria</TableCell>
                 <TableCell>Excluir</TableCell>
                 <TableCell>Editar</TableCell>
@@ -44,7 +43,6 @@ export default class ItemTabela extends React.Component {
                 <TableCell>{item.perdido}</TableCell>
                 <TableCell>{item.devolvido}</TableCell>
                 <TableCell>{item.data}</TableCell>
-                <TableCell>{item.usuario?(item.usuario.nome):""}</TableCell>
                 <TableCell>{item.categoria?(item.categoria.nome):""}</TableCell>
                 <TableCell>
                     <IconButton onClick={()=>this.props.onApagar(item)}>
